@@ -41,4 +41,16 @@ public class ReductionBuff extends WeaponAttributeDecorator {
         weaponAttribute.setArmour(weaponAttribute.getArmour() - reductionNum);
         return weaponAttribute;
     }
+
+    /**
+     * 修饰的逆过程
+     * @return
+     */
+    @Override
+    public WeaponAttribute getUndecoratedWeaponAttribute() {
+        WeaponAttribute weaponAttribute  = new WeaponAttribute(getWeaponAttribute());
+        //加上相应的护甲
+        weaponAttribute.setArmour(weaponAttribute.getArmour() + reductionNum);
+        return weaponAttribute;
+    }
 }

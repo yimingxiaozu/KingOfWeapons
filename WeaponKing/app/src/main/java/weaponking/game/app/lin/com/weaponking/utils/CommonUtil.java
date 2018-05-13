@@ -37,6 +37,8 @@ public class CommonUtil {
         stringBuffer.append(" Mana: " + weaponAttribute.getMana());
         stringBuffer.append(" MaxMana: " + weaponAttribute.getMaxMana());
         stringBuffer.append(" MovingDistance: " + weaponAttribute.getMovingDistance());
+        stringBuffer.append(" x: " + weaponAttribute.getPos_block_x());
+        stringBuffer.append(" y: " + weaponAttribute.getPos_block_y());
         return stringBuffer.toString();
     }
 }

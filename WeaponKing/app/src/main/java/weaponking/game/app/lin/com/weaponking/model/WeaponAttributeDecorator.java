@@ -47,4 +47,10 @@ public abstract class WeaponAttributeDecorator extends WeaponAttribute{
      */
     public abstract WeaponAttribute getDecoratedWeaponAttribute();
 
+    /**
+     * 获取修饰之前的属性
+     * @return
+     */
+    public  abstract WeaponAttribute getUndecoratedWeaponAttribute();
+
 }

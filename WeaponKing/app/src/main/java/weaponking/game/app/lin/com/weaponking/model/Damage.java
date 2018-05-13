@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 /**
  * Created by lenovo on 2018/3/25.
- * 伤害 基类
+ * 伤害
  */
 
-public abstract class Damage {
+public  class Damage {
 
     public enum DAMAGE_TYPE{
         TYPE_PHYSICAL, //物理伤害
@@ -27,5 +27,61 @@ public abstract class Damage {
     private float mulCriticalHit;//暴击倍数
 
     //法球效果, 攻击时附加buff
-    private ArrayList<WeaponAttribute> buffs;
+    private ArrayList<WeaponAttributeDecorator> buffs;
+
+    public Weapon getFromWeapon() {
+        return fromWeapon;
+    }
+
+    public void setFromWeapon(Weapon fromWeapon) {
+        this.fromWeapon = fromWeapon;
+    }
+
+    public Weapon getToWeapon() {
+        return toWeapon;
+    }
+
+    public void setToWeapon(Weapon toWeapon) {
+        this.toWeapon = toWeapon;
+    }
+
+    public DAMAGE_TYPE getDamageType() {
+        return damageType;
+    }
+
+    public void setDamageType(DAMAGE_TYPE damageType) {
+        this.damageType = damageType;
+    }
+
+    public int getDamage() {
+        return damage;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
+
+    public float getProCriticalHit() {
+        return proCriticalHit;
+    }
+
+    public void setProCriticalHit(float proCriticalHit) {
+        this.proCriticalHit = proCriticalHit;
+    }
+
+    public float getMulCriticalHit() {
+        return mulCriticalHit;
+    }
+
+    public void setMulCriticalHit(float mulCriticalHit) {
+        this.mulCriticalHit = mulCriticalHit;
+    }
+
+    public ArrayList<WeaponAttributeDecorator> getBuffs() {
+        return buffs;
+    }
+
+    public void setBuffs(ArrayList<WeaponAttributeDecorator> buffs) {
+        this.buffs = buffs;
+    }
 }

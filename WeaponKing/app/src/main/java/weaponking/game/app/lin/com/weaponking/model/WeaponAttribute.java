@@ -7,6 +7,18 @@ package weaponking.game.app.lin.com.weaponking.model;
 
 public class WeaponAttribute extends BasicAttribute {
 
+    private int maxHP;//血量上限
+    private int HP;//血量
+    private int dps;//攻击力
+    private Damage.DAMAGE_TYPE damageType;//攻击的方式 魔法或者物理
+    private int movingDistance;//能够移动的距离
+    private int awakeDistance;//被唤醒的距离
+    private int armour;//护甲
+    private float magicDefense;//魔法抗性
+    private int mana;//魔法值
+    private int maxMana;//最大魔法值
+
+
     public WeaponAttribute(){
         setObjectType(OBJECT_TYPE.WEAPON);//类型为武器
         setCanAttack(true);//可以攻击
@@ -19,30 +31,25 @@ public class WeaponAttribute extends BasicAttribute {
      * @param weaponAttribute 要复制的属性
      */
     public WeaponAttribute(WeaponAttribute weaponAttribute){
-        WeaponAttribute resultAttribute  = new WeaponAttribute();
-        resultAttribute.setMaxHP(weaponAttribute.getMaxHP());
-        resultAttribute.setHP(weaponAttribute.getHP());
-        resultAttribute.setArmour(weaponAttribute.getArmour());
-        resultAttribute.setDamageType(weaponAttribute.getDamageType());
-        resultAttribute.setAwakeDistance(weaponAttribute.getAwakeDistance());//唤醒距离
-        resultAttribute.setDps(weaponAttribute.getDps());
-        resultAttribute.setMagicDefense(weaponAttribute.getMagicDefense());
-        resultAttribute.setMaxMana(weaponAttribute.getMaxMana());
-        resultAttribute.setMana(weaponAttribute.getMana());
-        resultAttribute.setMovingDistance(weaponAttribute.getMovingDistance());//移动距离为1
+        //设置基本属性
+        setObjectType(weaponAttribute.getObjectType());
+        setCanAttack(weaponAttribute.canAttack());
+        setMovable(weaponAttribute.isMovable());
+        setIsGod(weaponAttribute.isGod());
+
+        setMaxHP(weaponAttribute.getMaxHP());
+        setHP(weaponAttribute.getHP());
+        setArmour(weaponAttribute.getArmour());
+        setDamageType(weaponAttribute.getDamageType());
+        setAwakeDistance(weaponAttribute.getAwakeDistance());//唤醒距离
+        setDps(weaponAttribute.getDps());
+        setMagicDefense(weaponAttribute.getMagicDefense());
+        setMaxMana(weaponAttribute.getMaxMana());
+        setMana(weaponAttribute.getMana());
+        setMovingDistance(weaponAttribute.getMovingDistance());//移动距离为1
     }
 
 
-    private int maxHP;//血量上限
-    private int HP;//血量
-    private int dps;//攻击力
-    private Damage.DAMAGE_TYPE damageType;//攻击的方式 魔法或者物理
-    private int movingDistance;//能够移动的距离
-    private int awakeDistance;//被唤醒的距离
-    private int armour;//护甲
-    private float magicDefense;//魔法抗性
-    private int mana;//魔法值
-    private int maxMana;//最大魔法值
 
     /**
      * 用此类来构造属性

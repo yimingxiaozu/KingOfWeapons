@@ -24,6 +24,28 @@ public class GameMap extends  BasicObject{
 
     private ArrayList<Force> forces;//地图中的军队
 
+    /**
+     * 构造一个宽有x个方块，高有y个方块的地图
+     * @param x
+     * @param y
+     */
+    public GameMap(int x, int y){
+        widthBlockNum = x;
+        heightBlockNum = y;
+    }
+
+    /**
+     * 加入一个队伍
+     * @param force
+     */
+    public void addForce(Force force){
+        if(force == null)
+            return;
+        if(forces == null)
+            forces = new ArrayList<>();
+        forces.add(force);
+        force.setGameMap(this);
+    }
 
     /**
      * 绘制地图
